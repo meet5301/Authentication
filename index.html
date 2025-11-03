@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flask and MongoDB CRUD</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 6px;
+        }
+
+        a {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Add User</h2>{{ current_user }}<br><br>
+    <a href="/register">Update User</a>
+    <a href="/login">Update User</a>
+    <form method="post" enctype="multipart/form-data">
+        Name: <input type="text" name="name" required>
+        Age: <input type="number" name="age" required>
+        Photo: <input type="file" name="photo" accept="image/*" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <h2>User List</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Photo</th>
+            
+        </tr>
+
+        {% for u in users %}
+        <tr>
+            <td>{{ u.name }}</td>
+            <td>{{ u.age }}</td>
+            <td><img src="data:image/jpeg;base64,{{ u.photo }}" width="100"></td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/update">Update User</a>
+    <a href="/delete">Delete User</a>
+
+</body>
+
+</html>
