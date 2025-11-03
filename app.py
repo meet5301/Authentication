@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # ---------- Flask + MongoDB Atlas + Authentication + Image Upload ----------
 
 from flask import Flask, render_template, request, redirect, session
@@ -89,7 +89,7 @@ def logout():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
-=======
+
 # ---------- Flask + MongoDB Atlas + Authentication + Image Upload ----------
 
 from flask import Flask, render_template, request, redirect, session
@@ -180,4 +180,4 @@ def logout():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port)
->>>>>>> 1999fd834b091bb61d36766bee1a18413ebed037
+
